@@ -407,6 +407,11 @@ def _findSwipl():
     # check environment
     if 'LIBSWIPL_PATH' in os.environ:
         return (os.environ['LIBSWIPL_PATH'], os.environ.get('SWI_HOME_DIR'))
+
+    # given by Nix
+    path = "REPLACE_BY_PATH_TO_SO"
+    swiHome = "REPLACE_BY_PATH_TO_SWI_HOME"
+    return (path, swiHome)
     
     # Now begins the guesswork    
     platform = sys.platform[:3]
